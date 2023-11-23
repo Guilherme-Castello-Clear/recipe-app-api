@@ -1,13 +1,13 @@
 FROM python:3.9-alpine3.13
 LABEL maintainer="guilhermecastello.com"
 
-ENV PYTHONUNBUFFEREF 1
+ENV PYTHONUNBUFFERED 1
 
 COPY ./requirements.txt /tmp/requirements.txt
 COPY ./requirements.dev.txt /tmp/requirements.dev.txt
 COPY ./app /app
 WORKDIR /app
-EXPOSE 0000
+EXPOSE 8000
 
 ARG DEV=false
 RUN python -m venv /py && \
